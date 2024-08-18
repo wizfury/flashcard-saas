@@ -74,7 +74,7 @@ export default function Home() {
             
 
             <Box sx={{my:6}}>
-                <Typography variant="h4" components="h2" gutterBottom>
+                <Typography variant="h4" align="center" components="h2" gutterBottom>
                     Features
                 </Typography>
                 <Grid container spacing={4}>

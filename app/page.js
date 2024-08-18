@@ -8,30 +8,30 @@ import Link from "next/link";
 
 export default function Home() {
     const handleSubmit = async()=>{
-        const checkoutSession = await fetch('/api/checkout_session',
-            {
-                method: 'POST',
-                headers: {
-                    'origin':'http://localhost:3000',
-                    'Content-Type': 'application/json'
-                },
-                })
+                const checkoutSession = await fetch('/api/checkout_session',
+                    {
+                        method: 'POST',
+                        headers: {
+                            'origin':'http://localhost:3000',
+                            'Content-Type': 'application/json'
+                        },
+                    })
 
-            const checkoutSessionJson = await checkoutSession.json()
-            if (checkoutSession.statusCode === 500)
-            {
-                console.error(checkoutSessionJson.message)
-                return
-            }
-            const stripe = await getStripe()
-            const {error} = await stripe.redirectToCheckout({
-                sessionId: checkoutSessionJson.id
-            })
+                    const checkoutSessionJson = await checkoutSession.json()
+                    if (checkoutSession.statusCode === 500)
+                    {
+                        console.error(checkoutSessionJson.message)
+                        return
+                    }
+                    const stripe = await getStripe()
+                    const {error} = await stripe.redirectToCheckout({
+                        sessionId: checkoutSessionJson.id
+                    })
 
-            if (error){
-                console.warn(error.message)
-            }
-            }
+                    if (error){
+                        console.warn(error.message)
+                    }
+                }
     return (
         <Container
         maxWidth="lg"
@@ -125,7 +125,7 @@ export default function Home() {
                                 {' '} 
                                 Access to basic flashcard features and limited Storage.
                             </Typography>
-                            <Button variant="contained" color="primary" sx={{mt:2}}>Choose Basic</Button>
+                            <Button variant="contained" color="primary" sx={{mt:2}} >Choose Basic</Button>
                         </Box>
                     </Grid>
                     <Grid item xs={12} md={6}>

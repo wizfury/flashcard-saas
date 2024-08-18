@@ -4,6 +4,7 @@ import {getStripe} from '@/utils/get-stripe'
 import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 import { AppBar, Container, Toolbar, Typography, Button,Box,Grid } from "@mui/material";
 import Head from "next/head";
+import Link from "next/link";
 
 export default function Home() {
     return (
@@ -39,13 +40,11 @@ export default function Home() {
             }}>
                 <Typography variant="h2" gutterBottom>Welcome To  Flashcard SaaS</Typography>
                 <Typography variant="h5"> The easiest way to make Flashcards from your text</Typography>
-                <Button 
-                
-                variant="contained" 
-                color="primary" 
-                sx={{mt:2}}>
-                    Get Started
-                </Button>
+                <Link href="/generate" passHref>
+                    <Button variant="contained" color="primary" sx={{ mt: 2 }}>
+                             Get Started
+                    </Button>
+                </Link>
             </Box>
             
 

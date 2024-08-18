@@ -8,18 +8,14 @@ export default function signinpage(){
                 <Toolbar>
                     <Typography variant="h6" sx={{ flexGrow:1}}>
                         Flashcard SaaS
-                        
                     </Typography>
+
                     <Button color="inherit">
                         <Link href="/sign-in" passHref>Login</Link>
-
-
                     </Button>
 
                     <Button color="inherit">
                         <Link href="/sign-up" passHref>Sign Up</Link>
-
-
                     </Button>
                     
                 </Toolbar>

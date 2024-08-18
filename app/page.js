@@ -7,6 +7,31 @@ import Head from "next/head";
 import Link from "next/link";
 
 export default function Home() {
+    const handleSubmit = async()=>{
+        const checkoutSession = await fetch('/api/checkout_session',
+            {
+                method: 'POST',
+                headers: {
+                    'origin':'http://localhost:3000',
+                    'Content-Type': 'application/json'
+                },
+                })
+
+            const checkoutSessionJson = await checkoutSession.json()
+            if (checkoutSession.statusCode === 500)
+            {
+                console.error(checkoutSessionJson.message)
+                return
+            }
+            const stripe = await getStripe()
+            const {error} = await stripe.redirectToCheckout({
+                sessionId: checkoutSessionJson.id
+            })
+
+            if (error){
+                console.warn(error.message)
+            }
+            }
     return (
         <Container
         maxWidth="lg"
@@ -114,7 +139,7 @@ export default function Home() {
                             <Typography variant="h5" gutterBottom>Pro</Typography>
                             <Typography variant="h6" gutterBottom>$10 / month</Typography>
                             <Typography>Unlimited flashcard and storage.</Typography>
-                            <Button variant="contained" color="primary" sx={{mt:2}}>Get Started</Button>
+                            <Button variant="contained" color="primary" sx={{mt:2}} onClick={handleSubmit}>Choose Pro</Button>
                         </Box>
                     </Grid>
                     

@@ -65,7 +65,7 @@ export default function Home() {
             }}>
                 <Typography variant="h2" gutterBottom>Welcome To  Flashcard SaaS</Typography>
                 <Typography variant="h5"> The easiest way to make Flashcards from your text</Typography>
-                <Link href="/generate" passHref>
+                <Link href="#pricing" passHref>
                     <Button variant="contained" color="primary" sx={{ mt: 2 }}>
                              Get Started
                     </Button>
@@ -107,7 +107,7 @@ export default function Home() {
 
             </Box>
 
-            <Box>
+            <Box id="pricing">
                 <Typography variant="h4" align="center" component="h2" gutterBottom>Pricing</Typography>
                 <Grid container spacing={4}>
                     <Grid item xs={12} md={6}>
@@ -120,12 +120,12 @@ export default function Home() {
                             }}>
 
                             <Typography variant="h5" gutterBottom>Basic</Typography>
-                            <Typography variant="h6" gutterBottom>$5 / month</Typography>
+                            <Typography variant="h6" gutterBottom>Free</Typography>
                             <Typography> 
                                 {' '} 
                                 Access to basic flashcard features and limited Storage.
                             </Typography>
-                            <Button variant="contained" color="primary" sx={{mt:2}} >Choose Basic</Button>
+                            <Button variant="contained" color="primary" sx={{mt:2}} href="/generate">Choose Basic</Button>
                         </Box>
                     </Grid>
                     <Grid item xs={12} md={6}>

@@ -23,6 +23,10 @@ export default function Home() {
                         <Button color="inherit" href="/sign-in">Login</Button>
                         <Button color="inherit" href="/sign-up">Sign Up</Button>
                     </SignedOut>
+
+                    <SignedIn>
+                        <UserButton />
+                    </SignedIn>
                 </Toolbar>
 
             </AppBar>
@@ -36,19 +40,21 @@ export default function Home() {
                 <Typography variant="h2" gutterBottom>Welcome To  Flashcard SaaS</Typography>
                 <Typography variant="h5"> The easiest way to make Flashcards from your text</Typography>
                 <Button 
+                
                 variant="contained" 
                 color="primary" 
                 sx={{mt:2}}>
                     Get Started
                 </Button>
             </Box>
+            
 
             <Box sx={{my:6}}>
                 <Typography variant="h4" components="h2" gutterBottom>
                     Features
                 </Typography>
-                <Grid contained spacing={4}>
-                    <Grid items xs={4} md={4}>
+                <Grid container spacing={4}>
+                    <Grid item xs={4} md={4}>
                         <Typography variant = "h6">Easy Text Input</Typography>
                       
                         <Typography gutterBottom> 
@@ -56,7 +62,7 @@ export default function Home() {
                             Simply input your text and let our software do the rest. Creating flashcards has never been easier.</Typography>
 
                     </Grid>
-                    <Grid items xs={4} md={4}>
+                    <Grid item xs={4} md={4}>
                         <Typography variant = "h6">Smart Flashcards</Typography>
                        
                         <Typography gutterBottom> 
@@ -64,7 +70,7 @@ export default function Home() {
                             Our Ai intelligently breaks down your text into concise flashcards, perfect for studying</Typography>
 
                     </Grid>
-                    <Grid items xs={4} md={4}>
+                    <Grid item xs={4} md={4}>
                         <Typography variant = "h6">Accessible Anywhere</Typography>
                         
                         <Typography gutterBottom> 
@@ -90,7 +96,7 @@ export default function Home() {
                             }}>
 
                             <Typography variant="h5" gutterBottom>Basic</Typography>
-                            <Typography variant="h6" gutterbottom>$5 / month</Typography>
+                            <Typography variant="h6" gutterBottom>$5 / month</Typography>
                             <Typography> 
                                 {' '} 
                                 Access to basic flashcard features and limited Storage.
@@ -106,8 +112,8 @@ export default function Home() {
                             border: '1px solid',
                             borderColor: 'grey.300'
                             }}>
-                            <Typography variant="h5" gutterbottom>Pro</Typography>
-                            <Typography variant="h6" gutterbottom>$10 / month</Typography>
+                            <Typography variant="h5" gutterBottom>Pro</Typography>
+                            <Typography variant="h6" gutterBottom>$10 / month</Typography>
                             <Typography>Unlimited flashcard and storage.</Typography>
                             <Button variant="contained" color="primary" sx={{mt:2}}>Get Started</Button>
                         </Box>

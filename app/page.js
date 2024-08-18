@@ -65,7 +65,7 @@ export default function Home() {
             }}>
                 <Typography variant="h2" gutterBottom>Welcome To  Flashcard SaaS</Typography>
                 <Typography variant="h5"> The easiest way to make Flashcards from your text</Typography>
-                <Link href="#pricing" passHref>
+                <Link href="/generate" passHref>
                     <Button variant="contained" color="primary" sx={{ mt: 2 }}>
                              Get Started
                     </Button>

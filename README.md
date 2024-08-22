@@ -1,5 +1,5 @@
 ### AI Flashcards & stripe
-AI Flashcards & stripe is a mobile app that uses AI to help users learn and retain information more
+AI Flashcards & stripe is a mobile app that uses AI to make Flashcards from your text.
 
 To get started, install:
 
